@@ -9,4 +9,4 @@ pipenv install
 pre-commit install
 ```
 
-Adds SECRET_KEY to SECRET section in github repository and local .env file
+Adds SECRET_KEY and PERSONAL_ACCESS_TOKEN to SECRET section in github repository and local .env file.
