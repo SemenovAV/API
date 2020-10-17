@@ -9,6 +9,7 @@ djangorestframework = "*"
 django-cors-headers = "*"
 
 [dev-packages]
+commitizen = "*"
 pre-commit = "*"
 autoflake = "*"
 black = "*"
@@ -41,7 +42,6 @@ pytest-custom-exit-code = "*"
 flake8-django = "*"
 isort = "*"
 seed-isort-config = "*"
-commitizen = "*"
 
 [requires]
 python_version = "3.7"
