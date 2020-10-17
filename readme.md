@@ -6,5 +6,7 @@
 ```
 pipenv shell
 pipenv install
-django-admin startproject project .
+pre-commit install
 ```
+
+Adds SECRET_KEY to SECRET section in github repository and local .env file
