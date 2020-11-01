@@ -6,7 +6,7 @@ name: Build
 on:
   push:
     paths: 
-    - 'backend/**'
+    - 'src/**'
     branches: [ master ]
   pull_request:
     branches: [ master ]
