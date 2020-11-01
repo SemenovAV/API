@@ -38,4 +38,4 @@ jobs:
       env: 
         SECRET_KEY: ${{secrets.SECRET_KEY}}
       run: |
-        coverage run --source=backend -m pytest --suppress-no-test-exit-code
+        coverage run --source=src -m pytest --suppress-no-test-exit-code
