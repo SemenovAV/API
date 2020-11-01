@@ -6,7 +6,7 @@
 
 ## first usage
 If the pipenv package is not installed:
-```pip install pipenv```
+``` pip install pipenv ```
 then:
 ```
 pipenv shell
