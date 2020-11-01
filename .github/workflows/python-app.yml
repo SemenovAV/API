@@ -6,7 +6,7 @@ name: Build
 on:
   push:
     paths: 
-    - './src/'
+    - 'src/**'
     branches: [ master ]
   pull_request:
     branches: [ master ]
