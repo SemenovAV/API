@@ -2,10 +2,16 @@
 
 # Django template
 
-## usage
+
+
+## first usage
+If the pipenv package is not installed:
+```pip install pipenv```
+then:
 ```
 pipenv shell
-pipenv install
+pipenv install --skip-lock --dev
+pipenv lock --pre
 pre-commit install --hook-type commit-msg
 ```
 

@@ -29,7 +29,7 @@ repos:
       entry: black
       language: system
       types: [python]
-      args: [--target-version=py37]
+      args: [--target-version=py38]
 
     - id: autoflake
       name: autoflake
@@ -61,14 +61,14 @@ repos:
       entry: pyupgrade
       language: system
       types: [python]
-      args: [--py37-plus]
+      args: [--py38-plus]
 
     - id: reorder-python-imports
       name: reorder-python-imports
       entry: reorder-python-imports
       language: system
       types: [python]
-      args: [--py37-plus]
+      args: [--py38-plus]
 
     - id: yesqa
       name: yesqa
