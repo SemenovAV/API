@@ -7,7 +7,7 @@ version = "0.0.11"
 tag_format = "v$minor.$major.$patch$prerelease"
 
 [tool.coverage.run]
-branch = "True"
+branch = True
 source = "src"
 omit = ["*/manage.py", "*/tests/*"]
 
