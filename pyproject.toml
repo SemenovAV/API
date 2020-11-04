@@ -3,7 +3,7 @@ known_third_party = ["django"]
 
 [tool.commitizen]
 name = "cz_conventional_commits"
-version = "0.0.001"
+version = "0.1.7"
 tag_format = "v$minor.$major.$patch$prerelease"
 
 [tool.coverage.run]
