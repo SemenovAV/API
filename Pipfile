@@ -3,12 +3,16 @@ url = "https://pypi.python.org/simple"
 verify_ssl = true
 name = "pypi"
 
+[requires]
+python_version = "3.8.6"
+
 [packages]
-Django = "*"
+django = "*"
 djangorestframework = "*"
 django-cors-headers = "*"
 
 [dev-packages]
+commitizen = "*"
 pre-commit = "*"
 autoflake = "*"
 black = "*"
@@ -41,7 +45,5 @@ pytest-custom-exit-code = "*"
 flake8-django = "*"
 isort = "*"
 seed-isort-config = "*"
-commitizen = "*"
-
-[requires]
-python_version = "3.7"
+wheel = "*"
+psycopg2-binary = "*"

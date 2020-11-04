@@ -5,8 +5,6 @@ name: Build
 
 on:
   push:
-    paths: 
-    - 'backend/**'
     branches: [ master ]
   pull_request:
     branches: [ master ]
@@ -18,10 +16,10 @@ jobs:
 
     steps:
     - uses: actions/checkout@v2
-    - name: Set up Python 3.7
+    - name: Set up Python 3.8.6
       uses: actions/setup-python@v2
       with:
-        python-version: 3.7
+        python-version: 3.8.6
     - name: Install dependencies
       run: |
         python -m pip install --upgrade pip
@@ -38,4 +36,4 @@ jobs:
       env: 
         SECRET_KEY: ${{secrets.SECRET_KEY}}
       run: |
-        coverage run --source=backend -m pytest --suppress-no-test-exit-code
+        coverage run --source='./src' -m pytest --suppress-no-test-exit-code
