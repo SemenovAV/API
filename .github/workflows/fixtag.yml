@@ -25,5 +25,11 @@ jobs:
       # Runs a single command using the runners shell
       - name: Run a one-line script
         run: |
+          #Delete local tags.
+          git tag -l | xargs git tag -d
+          #Fetch remote tags.
+          git fetch
+          #Delete remote tags.
           git tag -l | xargs -n 1 git push --delete origin
-          git tag | xargs git tag -d
+          #Delete local tasg.
+          git tag -l | xargs git tag -d
