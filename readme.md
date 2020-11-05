@@ -34,9 +34,9 @@ Add:
 
 ## Usage
 
-Edit the code
+Edit the code.
 
-and commit the changes using the command:
-```angular2html
+Commit the changes using the command:
+```
 cz commit
 ```
