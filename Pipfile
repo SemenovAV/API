@@ -10,6 +10,7 @@ python_version = "3.8.6"
 django = "*"
 djangorestframework = "*"
 django-cors-headers = "*"
+psycopg2-binary = "*"
 
 [dev-packages]
 commitizen = "*"
@@ -45,5 +46,3 @@ pytest-custom-exit-code = "*"
 flake8-django = "*"
 isort = "*"
 seed-isort-config = "*"
-wheel = "*"
-psycopg2-binary = "*"
