@@ -4,10 +4,14 @@
 
 
 
-## first usage
+## First usage
+
 If the pipenv package is not installed:
 
-``` pip install pipenv ```
+``` 
+pip install pipenv 
+
+```
 
 then:
 ```
@@ -16,7 +20,23 @@ pipenv install --skip-lock --dev
 pipenv lock --pre
 pre-commit install --hook-type commit-msg
 ```
+Create file .env to project root.
 
-Adds ```SECRET_KEY``` and ```PERSONAL_ACCESS_TOKEN``` to SECRET section in github repository and local .env file.
+Add:
+ * ```SECRET_KEY``` - django secret key,
+ * ```POSTGRES_DB```,
+ * ```POSTGRES_USER``` ,
+ * ```POSTGRES_PASSWORD ```,
+ * ```POSTGRES_HOST ``` ,
+ * ```POSTGRES_PORT ```  
+   
+   variables to SECRET section in github repository and local .env file.
 
-...
+## Usage
+
+Edit the code
+
+and commit the changes using the command:
+```angular2html
+cz commit
+```
