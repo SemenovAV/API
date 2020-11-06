@@ -4,7 +4,7 @@ verify_ssl = true
 name = "pypi"
 
 [scripts]
-fix = "pre-commit run black | pre-commit run autoflake"
+fix = "pre-commit run black"
 
 [requires]
 python_version = "3.8.6"
