@@ -26,7 +26,7 @@ jobs:
         pip install pipenv
         pipenv install --skip-lock --dev
         pipenv lock --pre
-        pipenv run hello
+        pipenv run fix
         pipenv run pre-commit install --hook-type commit-msg
     - name: lint
       run: pipenv run pre-commit run flake8 -a
