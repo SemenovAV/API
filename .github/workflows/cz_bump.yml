@@ -2,7 +2,7 @@ name: Bump version
 
 on:
   push:
-    branches: [ $default-branch ]
+    branches: [ master ]
 jobs:
   bump-version:
     if: "!startsWith(github.event.head_commit.message, 'bump:')"
