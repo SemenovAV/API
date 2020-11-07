@@ -49,3 +49,6 @@ pytest-custom-exit-code = "*"
 flake8-django = "*"
 isort = "*"
 seed-isort-config = "*"
+
+[pipenv]
+allow_prereleases = true
