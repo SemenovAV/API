@@ -45,6 +45,8 @@ jobs:
         pipenv run pre-commit install --hook-type commit-msg
 
     - name: migrate
+      env:
+        SECRET_KEY: secret.SECRET_KEY
       run: pipenv run python src/manage.py migrate
 
     - name: lint
