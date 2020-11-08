@@ -32,17 +32,24 @@ jobs:
       uses: actions/setup-python@v2
       with:
         python-version: 3.8.6
-    - name: Install dependencies
+    - name: install pipenv
       run: |
+        sudo apt-get install libpq-dev -y
         python -m pip install --upgrade pip
         pip install pipenv
+
+    - name: Install dependencies
+      run: |
         pipenv install --skip-lock --dev
         pipenv lock --pre
         pipenv run pre-commit install --hook-type commit-msg
+
     - name: migrate
-      run: pipenv run cd src && manage.py migrate
+      run: pipenv run python src/manage.py migrate
+
     - name: lint
       run: pipenv run pre-commit run flake8 -a
+
     - name: Test with pytest
       run: |
         pipenv run coverage run --source='./src' -m pytest --suppress-no-test-exit-code
