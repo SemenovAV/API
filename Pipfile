@@ -4,7 +4,7 @@ verify_ssl = true
 name = "pypi"
 
 [scripts]
-lint = "pre-commit run flake8 -a"
+lint = "pre-commit run -a"
 
 [requires]
 python_version = "3.8.6"
