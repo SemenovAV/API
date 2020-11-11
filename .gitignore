@@ -1,4 +1,3 @@
-
 # Created by https://www.toptal.com/developers/gitignore/api/django
 # Edit at https://www.toptal.com/developers/gitignore?templates=django
 
@@ -20,6 +19,10 @@ media
 # Byte-compiled / optimized / DLL files
 *.py[cod]
 *$py.class
+# Created by .ignore support plugin (hsz.mobi)
+### Python template
+# Byte-compiled / optimized / DLL files
+*vscode
 
 # C extensions
 *.so
@@ -69,6 +72,9 @@ coverage.xml
 .hypothesis/
 .pytest_cache/
 
+# Django stuff:
+cover/
+
 # Translations
 *.mo
 
@@ -85,6 +91,7 @@ instance/
 docs/_build/
 
 # PyBuilder
+.pybuilder/
 target/
 
 # Jupyter Notebook
@@ -144,22 +151,12 @@ dmypy.json
 # pytype static type analyzer
 .pytype/
 
-# End of https://www.toptal.com/developers/gitignore/api/django
+# Cython debug symbols
+cython_debug/
 
-# Created by https://www.toptal.com/developers/gitignore/api/visualstudiocode
-# Edit at https://www.toptal.com/developers/gitignore?templates=visualstudiocode
+/main/postgres.py
 
-### VisualStudioCode ###
-.vscode/*
-!.vscode/settings.json
-!.vscode/tasks.json
-!.vscode/launch.json
-!.vscode/extensions.json
-*.code-workspace
-### Pucharm ###
+DS_Store
+
 .idea/
-### VisualStudioCode Patch ###
-# Ignore all local history of files
-.history
 
-# End of https://www.toptal.com/developers/gitignore/api/visualstudiocode

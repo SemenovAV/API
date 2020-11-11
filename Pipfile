@@ -3,6 +3,9 @@ url = "https://pypi.python.org/simple"
 verify_ssl = true
 name = "pypi"
 
+[scripts]
+lint = "pre-commit run -a"
+
 [requires]
 python_version = "3.8.6"
 
@@ -10,14 +13,17 @@ python_version = "3.8.6"
 django = "*"
 djangorestframework = "*"
 django-cors-headers = "*"
+psycopg2-binary = "*"
+requests = "*"
 
 [dev-packages]
+ipython = "*"
+django-debug-toolbar = "*"
 commitizen = "*"
 pre-commit = "*"
 autoflake = "*"
 black = "*"
 pyupgrade = "*"
-reorder-python-imports = "*"
 yesqa = "*"
 flake8 = "*"
 flake8-bandit = "*"
@@ -45,5 +51,6 @@ pytest-custom-exit-code = "*"
 flake8-django = "*"
 isort = "*"
 seed-isort-config = "*"
-wheel = "*"
-psycopg2-binary = "*"
+
+[pipenv]
+allow_prereleases = true
