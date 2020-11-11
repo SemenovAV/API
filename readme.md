@@ -1,43 +1,26 @@
-![Build](https://github.com/SemenovAV/core/workflows/Build/badge.svg)
-[![pre-commit](https://img.shields.io/badge/pre--commit-enabled-brightgreen?logo=pre-commit&logoColor=white)](https://github.com/pre-commit/pre-commit)
+# Сервер Джанго
 
-# Django template
+## Инструкция по установке:
+**После клонирования репозитория прописать следующие команды в терминале из соответствующего каталога:**
+(Необходимо установить Python - написан на версии 3,8)
+- `pip install virtualenv` - установка модуля для создания виртуально среды
+- `python3 -m venv env` (env названия виртуальной среды, произольное, как правило берут venv)
+- `source venv/bin/activate` (venv - название вирутально среды из пункта выше) - для активации вирутальной среды
+- `pip install -r requirements.txt` - команда для установки необходимых приложений
 
 
+В main/settings
+ две настройки для БД. Можете прописать свои в постгрес (если имеется) в соответствующих полях, либо перед каждой строчкой параметра DATABASES и вышестоящим from поставить # а с нижнего DATABASES убрать. После чего прогнать команду в терминале `python3 manage.py migrate`. Сервер готов к работе!!!
 
-## First usage
+На этом приготовления закончены, для запуска прописать команду `python3 manage.py runserver`
 
-If the pipenv package is not installed:
+Итак:
+БД - PostgeSQL - пока стоят мои параметры, позже поменять
+Поставил джанго дебаг
+Ipython - мне понравился
 
-``` 
-pip install pipenv 
+Пока при запуске выкидивает 404 ошибку, поскольку сервер голый и нет привязак к урлам. 
+Все шаблоны, согласно настройкам должны находиться в `templates/SheduliZZZer`, css и js файлы в папке `static/css|/js
+` соответственно.
 
-```
-
-then:
-```
-pipenv shell
-pipenv install --skip-lock --dev
-pipenv lock --pre
-pre-commit install --hook-type commit-msg
-```
-Create file .env to project root.
-
-Add:
- * ```SECRET_KEY``` - django secret key,
- * ```POSTGRES_DB```,
- * ```POSTGRES_USER``` ,
- * ```POSTGRES_PASSWORD ```,
- * ```POSTGRES_HOST ``` ,
- * ```POSTGRES_PORT ```  
-   
-   variables to SECRET section in github repository and local .env file.
-
-## Usage
-
-Edit the code.
-
-Commit the changes using the command:
-```
-cz commit
-```
+Пока всё что мог, дальше будем продвигать. Если что не так сделал говорите! =)
