@@ -1,9 +1,6 @@
-[tool.isort.settings]
-known_third_party = ["django"]
-
 [tool.commitizen]
 name = "cz_conventional_commits"
-version = "1.0.13"
+version = "0.1.7"
 tag_format = "v$minor.$major.$patch$prerelease"
 
 [tool.coverage.run]

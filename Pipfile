@@ -5,6 +5,10 @@ name = "pypi"
 
 [scripts]
 lint = "pre-commit run -a"
+fix = "black --line-length=130 --target-version=py38 --verbose ./src"
+test = "coverage run --source='./src' -m pytest --suppress-no-test-exit-code"
+serve = "python ./src/manage.py runserver"
+
 
 [requires]
 python_version = "3.8.6"
@@ -21,10 +25,7 @@ ipython = "*"
 django-debug-toolbar = "*"
 commitizen = "*"
 pre-commit = "*"
-autoflake = "*"
 black = "*"
-pyupgrade = "*"
-yesqa = "*"
 flake8 = "*"
 flake8-bandit = "*"
 flake8-broken-line = "*"
@@ -49,8 +50,6 @@ pytest-cov = "*"
 pytest-django = "*"
 pytest-custom-exit-code = "*"
 flake8-django = "*"
-isort = "*"
-seed-isort-config = "*"
 
 [pipenv]
 allow_prereleases = true
