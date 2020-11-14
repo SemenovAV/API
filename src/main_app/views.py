@@ -8,8 +8,8 @@ import os
 from .sheduler_API import Sheduler
 
 # Create your views here.
-from main.settings import STATIC_ROOT, BASE_DIR
-
+from django.conf import settings
+STATIC_ROOT = settings.STATIC_ROOT
 
 class GetEvents(APIView):
     """Получает данные из файла и выводит их по урлу"""
@@ -23,7 +23,7 @@ class GetEvents(APIView):
             start_date = datetime.strptime(request.GET.get('start_date'), '%Y-%m-%d')
         except TypeError:
             return Response({
-                'events': json_data, 
+                'events': json_data,
                 'success': 'true',
                 })
 
@@ -36,16 +36,16 @@ class GetEvents(APIView):
                 'date': event['date'],
                 'time': event['time'],
             }
-            for event in json_data 
-            if (event.get('id') 
-                and datetime.strptime(event['date'], '%Y-%m-%d') >= start_date) 
+            for event in json_data
+            if (event.get('id')
+                and datetime.strptime(event['date'], '%Y-%m-%d') >= start_date)
                 and (datetime.strptime(event['date'], '%Y-%m-%d') <= end_date)]
 
         return Response({
-            'events': events, 
+            'events': events,
             'success': 'true',
             })
-        
+
 class GetExperts(APIView):
     """Получает данные из файла и выводит их по урлу"""
     def get(self, request):
@@ -54,7 +54,7 @@ class GetExperts(APIView):
             json_data = json.load(file)
 
         return Response({
-            'experts': json_data, 
+            'experts': json_data,
             'success': 'true',
             })
 
@@ -66,8 +66,8 @@ class UpdateEvents(APIView):
         with open(file_patch, 'w', encoding='utf-8',newline='\n') as file:
             json.dump(events, file)
         return Response({'success': 'true'})
-    
-    
+
+
 class UpdateExperts(APIView):
     def get(self, request):
         sheduler = Sheduler()
@@ -76,7 +76,7 @@ class UpdateExperts(APIView):
         with open(file_patch, 'w', encoding='utf-8',newline='\n') as file:
             json.dump(experts, file)
         return Response({'success': 'true'})
-    
+
 class UpdateImages(APIView):
     def get(self, request):
         sheduler = Sheduler()
@@ -85,7 +85,7 @@ class UpdateImages(APIView):
         with open(file_patch, 'w', encoding='utf-8',newline='\n') as file:
             json.dump(images, file)
         return Response({'success': 'true'})
-    
+
 class UpdateDefaultEvents(APIView):
     def get(self, request):
         sheduler = Sheduler()

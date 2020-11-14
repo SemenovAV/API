@@ -32,7 +32,7 @@ class Migration(migrations.Migration):
             fields=[
                 ('id', models.AutoField(auto_created=True, primary_key=True, serialize=False, verbose_name='ID')),
                 ('title', models.CharField(max_length=50)),
-                ('course', models.ManyToManyField(related_name='groups', to='SheduliZZZer.Course')),
+                ('course', models.ManyToManyField(related_name='groups', to='main_app.Course')),
             ],
         ),
         migrations.CreateModel(
@@ -42,7 +42,7 @@ class Migration(migrations.Migration):
                 ('title', models.CharField(max_length=50)),
                 ('time', models.TimeField()),
                 ('date', models.DateField()),
-                ('course', models.ManyToManyField(related_name='webConference', to='SheduliZZZer.Course')),
+                ('course', models.ManyToManyField(related_name='webConference', to='main_app.Course')),
             ],
         ),
         migrations.CreateModel(
@@ -51,7 +51,7 @@ class Migration(migrations.Migration):
                 ('id', models.AutoField(auto_created=True, primary_key=True, serialize=False, verbose_name='ID')),
                 ('title', models.CharField(max_length=50)),
                 ('abbriviation', models.CharField(max_length=10)),
-                ('course', models.ManyToManyField(related_name='profession', to='SheduliZZZer.Course')),
+                ('course', models.ManyToManyField(related_name='profession', to='main_app.Course')),
             ],
         ),
         migrations.CreateModel(
@@ -62,28 +62,28 @@ class Migration(migrations.Migration):
                 ('last_name', models.CharField(max_length=20)),
                 ('middle_name', models.CharField(blank=True, max_length=20, null=True)),
                 ('email', models.EmailField(max_length=254)),
-                ('group', models.ManyToManyField(related_name='members', to='SheduliZZZer.Group')),
+                ('group', models.ManyToManyField(related_name='members', to='main_app.Group')),
             ],
         ),
         migrations.CreateModel(
             name='Expert',
             fields=[
                 ('id', models.AutoField(auto_created=True, primary_key=True, serialize=False, verbose_name='ID')),
-                ('course', models.ManyToManyField(related_name='experts', to='SheduliZZZer.Course')),
-                ('person', models.ManyToManyField(related_name='expert', to='SheduliZZZer.Person')),
+                ('course', models.ManyToManyField(related_name='experts', to='main_app.Course')),
+                ('person', models.ManyToManyField(related_name='expert', to='main_app.Person')),
             ],
         ),
         migrations.AddField(
             model_name='course',
             name='direction',
-            field=models.ForeignKey(on_delete=django.db.models.deletion.CASCADE, to='SheduliZZZer.direction'),
+            field=models.ForeignKey(on_delete=django.db.models.deletion.CASCADE, to='main_app.direction'),
         ),
         migrations.CreateModel(
             name='Coordinater',
             fields=[
                 ('id', models.AutoField(auto_created=True, primary_key=True, serialize=False, verbose_name='ID')),
-                ('course', models.ManyToManyField(related_name='coordinaters', to='SheduliZZZer.Course')),
-                ('person', models.ManyToManyField(related_name='coordinater', to='SheduliZZZer.Person')),
+                ('course', models.ManyToManyField(related_name='coordinaters', to='main_app.Course')),
+                ('person', models.ManyToManyField(related_name='coordinater', to='main_app.Person')),
             ],
         ),
     ]

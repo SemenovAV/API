@@ -98,4 +98,4 @@ class Person(models.Model):
 #         related_name='coordinater',
 #     )
 
-#from SheduliZZZer.models import Coordinater, Expert, Person, Group, WebConference, Profession, Course, Direction
+#from main_app.models import Coordinater, Expert, Person, Group, WebConference, Profession, Course, Direction

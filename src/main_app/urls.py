@@ -3,7 +3,7 @@ from django.contrib.staticfiles.urls import staticfiles_urlpatterns
 
 from .views import GetEvents, GetExperts, UpdateEvents, UpdateExperts, UpdateImages, UpdateDefaultEvents
 
-app_name = 'SheduliZZZer'
+app_name = 'main_app'
 
 urlpatterns = [
     path('get_events/', GetEvents.as_view()),

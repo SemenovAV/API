@@ -7,7 +7,7 @@ import django.db.models.deletion
 class Migration(migrations.Migration):
 
     dependencies = [
-        ('SheduliZZZer', '0001_initial'),
+        ('main_app', '0001_initial'),
     ]
 
     operations = [
@@ -22,22 +22,22 @@ class Migration(migrations.Migration):
         migrations.AddField(
             model_name='group',
             name='lecture',
-            field=models.ManyToManyField(related_name='group', to='SheduliZZZer.WebConference'),
+            field=models.ManyToManyField(related_name='group', to='main_app.WebConference'),
         ),
         migrations.AddField(
             model_name='person',
             name='coordinater',
-            field=models.ManyToManyField(related_name='coordinaters', to='SheduliZZZer.Course'),
+            field=models.ManyToManyField(related_name='coordinaters', to='main_app.Course'),
         ),
         migrations.AddField(
             model_name='person',
             name='expert_lecture',
-            field=models.ManyToManyField(related_name='experts', to='SheduliZZZer.WebConference'),
+            field=models.ManyToManyField(related_name='experts', to='main_app.WebConference'),
         ),
         migrations.AlterField(
             model_name='course',
             name='direction',
-            field=models.ForeignKey(on_delete=django.db.models.deletion.CASCADE, related_name='courses', to='SheduliZZZer.direction'),
+            field=models.ForeignKey(on_delete=django.db.models.deletion.CASCADE, related_name='courses', to='main_app.direction'),
         ),
         migrations.AlterField(
             model_name='person',
