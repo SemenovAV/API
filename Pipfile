@@ -7,7 +7,8 @@ name = "pypi"
 lint = "pre-commit run -a"
 fix = "black --line-length=130 --target-version=py38 --verbose ./src"
 test = "coverage run --source='./src' -m pytest --suppress-no-test-exit-code"
-serve = "python ./src/manage.py runserver"
+serve = "python3 ./src/manage.py runserver"
+wserve = "python ./src/manage.py runserver"
 
 
 [requires]

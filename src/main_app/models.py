@@ -1,5 +1,6 @@
 from django.db import models
-from django.contrib.auth.models import AbstractUser
+# from django.contrib.auth.models import AbstractUser
+
 
 # Create your models here.
 class Direction(models.Model):
@@ -8,24 +9,27 @@ class Direction(models.Model):
     def __str__(self):
         return self.title
 
+
 class Course(models.Model):
     title = models.CharField(max_length=50)
     abbriviation = models.CharField(max_length=10)
-    direction = models.ForeignKey(Direction, related_name='courses', on_delete=models.CASCADE)
+    direction = models.ForeignKey(Direction, related_name="courses", on_delete=models.CASCADE)
 
     def __str__(self):
         return self.title
+
 
 class Profession(models.Model):
     title = models.CharField(max_length=50)
     abbriviation = models.CharField(max_length=10)
     course = models.ManyToManyField(
         Course,
-        related_name='profession',
+        related_name="profession",
     )
 
     def __str__(self):
         return self.title
+
 
 class WebConference(models.Model):
     title = models.CharField(max_length=50)
@@ -33,50 +37,50 @@ class WebConference(models.Model):
     date = models.DateField()
     course = models.ManyToManyField(
         Course,
-        related_name='webConference',
+        related_name="webConference",
     )
 
     def __str__(self):
         return self.title
+
 
 class Group(models.Model):
     title = models.CharField(max_length=50)
     course = models.ManyToManyField(
         Course,
-        related_name='groups',
+        related_name="groups",
     )
-    lecture = models.ManyToManyField(
-        WebConference,
-        related_name='group'
-    )
+    lecture = models.ManyToManyField(WebConference, related_name="group")
 
     def __str__(self):
         return self.title
 
+
 class Person(models.Model):
     first_name = models.CharField(max_length=20)
     last_name = models.CharField(max_length=20)
-    middle_name = models.CharField(max_length=20, blank=True, null=True, default='') # отчество
+    middle_name = models.CharField(max_length=20, blank=True, default="")  # отчество
     email = models.EmailField()
     group = models.ManyToManyField(
         Group,
-        related_name='members',
+        related_name="members",
     )
     expert_lecture = models.ManyToManyField(
         WebConference,
-        related_name='experts',
+        related_name="experts",
     )
     coordinater = models.ManyToManyField(
         Course,
-        related_name='coordinaters',
+        related_name="coordinaters",
     )
 
     def __str__(self):
         if self.middle_name:
-            name = self.last_name + ' ' + self.first_name + ' ' + self.middle_name
+            name = self.last_name + " " + self.first_name + " " + self.middle_name
         else:
-            name = self.last_name + ' ' + self.first_name
+            name = self.last_name + " " + self.first_name
         return name
+
 #
 # class Expert(models.Model):
 #     webConference = models.ManyToManyField(
@@ -98,4 +102,4 @@ class Person(models.Model):
 #         related_name='coordinater',
 #     )
 
-#from main_app.models import Coordinater, Expert, Person, Group, WebConference, Profession, Course, Direction
+# from main_app.models import Coordinater, Expert, Person, Group, WebConference, Profession, Course, Direction
