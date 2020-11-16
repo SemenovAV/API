@@ -19,6 +19,9 @@ repos:
       language: system
       types: [ python ]
       args: [
+            "--ignore=E800,W503",
+            #E800 разрешены комментарии
+            #W503 line break before binary operator
             "--max-line-length=130",
             "--per-file-ignores=*/tests*.py:S101",
             "--exclude=manage.py"
