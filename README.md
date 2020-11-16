@@ -72,7 +72,7 @@
 На этом приготовления закончены, для запуска прописать команду:
 - Linux: `python3 ./src/manage.py runserver`
 - Windows: `python ./src/manage.py runserver`
-- MacOS: `хз как - Андрей я думаю знает :)` 
+- MacOS: `python3 ./src/manage.py runserver` 
 
 Итак:
 БД - для использования PostgeSQL - установить переменную в .env POSTGRES=on.
@@ -113,7 +113,8 @@ Ipython - мне понравился.
 - `pipenv run lint` проверка стиля написания кода ([flake8](https://flake8.pycqa.org/en/latest/), [rules](https://www.flake8rules.com/))
 - `pipenv run fix` исправление стилистических ошибок - запустит [black](https://black.readthedocs.io/en/stable/)
 - `pipenv run test` запуск связки [pytest](https://docs.pytest.org/en/stable/), [pytest-django](https://pytest-django.readthedocs.io/en/latest/) и [coverage](https://coverage.readthedocs.io/en/coverage-5.3/)
-- `pipenv run serve` тоже что и `python ./src/manage.py runserver`, возможно не сработает на linux и MakOS
+- `pipenv run serve` тоже что и `python3 ./src/manage.py runserver`,запуск сервера в Linux и MacOS
+- `pipenv run wserve` тоже что и `python ./src/manage.py runserver`,запуск сервера в Windows
 
 Кроме этого через `pipenv run` можно запустить любую другую команду и она выполнится в виртуальном окружении.
 

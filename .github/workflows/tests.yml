@@ -41,9 +41,7 @@ jobs:
 
     - name: Install dependencies
       run: |
-        pipenv install --skip-lock --dev
-        pipenv lock --pre
-
+        pipenv install --dev
         pipenv run pre-commit install --hook-type commit-msg
 
     - name: migrate
