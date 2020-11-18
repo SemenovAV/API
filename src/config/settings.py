@@ -42,7 +42,7 @@ INSTALLED_APPS = [
     "django.contrib.messages",
     "django.contrib.staticfiles",
     "rest_framework",
-    "src.main_app",
+    "main_app",
 ]
 
 if DEBUG:
