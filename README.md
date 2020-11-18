@@ -45,6 +45,7 @@
 
 Обязательно:
 - `SECRET_KEY` - cекретный ключ Django
+- `PYTHONPATH` - путь к корню Django проекта сейчас это `./src/`
 
 Если используем Postgres:
 - `POSTGRES` - для использования Postgres устанавливаем значение `on`.
@@ -58,6 +59,7 @@
 Пример содержимого файла **.env**:
   ```
   SECRET_KEY=+k*ppm$q7*z&1lc36u$mb4ttm_c32_gey5xbrhgq@f!9dfyfhygvh
+  PYTHONPATH=./src/
   POSTGRES=on
   POSTGRES_DB=sh_db
   POSTGRES_USER=sh_user
