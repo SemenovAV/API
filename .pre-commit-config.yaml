@@ -23,7 +23,7 @@ repos:
             #E800 разрешены комментарии
             #W503 line break before binary operator
             "--max-line-length=130",
-            "--per-file-ignores=*/tests*.py:S101",
-            "--exclude=manage.py"
+            "--per-file-ignores=*/tests*.py:S101,",
+            "--exclude=manage.py,*/migrations/*.py"
           # S101 Use of assert detected
         ]
