@@ -4,11 +4,11 @@ verify_ssl = true
 name = "pypi"
 
 [scripts]
-manage = "python ./src/manage.py"
+manage = "cd ./src && python manage.py"
 init = "pre-commit install --hook-type commit-msg"
 lint = "pre-commit run -a"
 fix = "black --line-length=130 --target-version=py38 --verbose ./src"
-test = "coverage run --source='./src' -m pytest --suppress-no-test-exit-code"
+tests = "coverage run --source='./src' -m pytest --suppress-no-test-exit-code"
 serve = "python ./src/manage.py runserver"
 
 [requires]
