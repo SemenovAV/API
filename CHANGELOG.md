@@ -1,3 +1,9 @@
+## v0.2.1 (2020-12-05)
+
+### Fix
+
+- **users**: hashed password save
+
 ## v0.2.0 (2020-12-01)
 
 ### Feat
