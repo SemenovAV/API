@@ -53,3 +53,50 @@ def test_create_superuser():
     with pytest.raises(IntegrityError):
         User.objects.create_superuser(
             email='super@user.com', password=password, is_superuser=False)
+
+
+@pytest.mark.django_db
+def test_user_full_name_with_middle_name():
+    User = get_user_model()
+    first_name = "User"
+    last_name = "Useroff"
+    middle_name = "Userson"
+    password = get_password(8)
+    user = User.objects.create_user(
+        email='normal@user.com',
+        first_name=first_name,
+        last_name=last_name,
+        middle_name=middle_name,
+        password=password,
+    )
+    assert user.get_full_name() == "User Userson Useroff"
+
+
+@pytest.mark.django_db
+def test_user_full_name():
+    User = get_user_model()
+    first_name = "User"
+    last_name = "Useroff"
+    password = get_password(8)
+    user = User.objects.create_user(
+        email='normal@user.com',
+        first_name=first_name,
+        last_name=last_name,
+        password=password,
+    )
+    assert user.get_full_name() == "User Useroff"
+
+
+@pytest.mark.django_db
+def test_user_short_name():
+    User = get_user_model()
+    first_name = "User"
+    last_name = "Useroff"
+    password = get_password(8)
+    user = User.objects.create_user(
+        email='normal@user.com',
+        first_name=first_name,
+        last_name=last_name,
+        password=password,
+    )
+    assert user.get_short_name() == "User"
