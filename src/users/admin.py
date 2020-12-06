@@ -1,4 +1,3 @@
-from django.contrib.auth import admin
 from django.contrib.auth.admin import UserAdmin
 from django.contrib import admin
 from django.utils.translation import gettext_lazy as _
@@ -29,5 +28,3 @@ class CustomUserAdmin(UserAdmin):
             'fields': ('email', 'first_name', 'middle_name', 'last_name', 'password1', 'password2'),
         }),
     )
-
-
