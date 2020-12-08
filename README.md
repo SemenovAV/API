@@ -27,6 +27,7 @@
    - `/config` - основной проект django 
    - `/main_app` - основное приложение (было `sheduliZZZer` переименовал для большей гибкости) 
    - `/static` - статика
+   - `/users` - django приложение реализующее модель кастомного пользователя и подключающее [djoser](https://djoser.readthedocs.io/en/latest/) аутентификацию.
    - `manage.py` 
    - `utils.py` 
  - `.editorconfig` - настройки ide, требует установки соответствующего плагина ([download page](https://editorconfig.org/#download))
@@ -56,6 +57,13 @@
 - `POSTGRES_HOST` - хост, для localhost: 127.0.0.1
 - `POSTGRES_PORT` - порт по умолчанию: 5432
 
+Если используем почту для активации аккаунтов:
+  
+- `EMAIL_HOST` - адрес почтового сервиса, например `smtp.gmail.com`
+- `EMAIL_HOST_USER` - емейл адрес для рассылки сообщений 
+- `EMAIL_HOST_PASSWORD`- пароль 
+- `EMAIL_PORT` - порт, для `smtp.gmail.com` это 587
+  
 Пример содержимого файла **.env**:
   ```
   SECRET_KEY=+k*ppm$q7*z&1lc36u$mb4ttm_c32_gey5xbrhgq@f!9dfyfhygvh
@@ -66,6 +74,10 @@
   POSTGRES_PASSWORD=password
   POSTGRES_HOST=127.0.0.1
   POSTGRES_PORT=5432
+  EMAIL_HOST=smtp.gmail.com
+  EMAIL_HOST_USER=admin@gmail.com
+  EMAIL_HOST_PASSWORD='supperpassword'
+  EMAIL_PORT=587
   ```
 
 ### config/settings.py
